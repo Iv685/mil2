@@ -1,0 +1,255 @@
+
+
+print('Задача 1. Урок информатики 2')
+
+
+def floating_point(number):
+  degree = 0
+  if number > 10:
+    while number > 10:
+      number /= 10    
+      degree += 1
+  elif number < 1:
+    while number < 1:
+      number *= 10
+      degree -= 1    
+  print('Формат плавающей точки: x =', number, '* 10 **', degree)
+
+
+number =  float(input('Введите число: '))
+while number < 0:
+  print('Вы ввели отрицательное число, повторите ввод')
+  number =  float(input('Введите число: '))
+
+
+floating_point(number)
+
+
+
+
+
+print('Задача 2. Функция максимума')
+
+
+def maximum(number_1, number_2):
+  max_number = (number_1 + number_2 + abs(number_1 - number_2)) / 2
+  return max_number   
+
+
+number_1 = float(input('Введите первое число: '))
+number_2 = float(input('Введите второе число: '))
+number_3 = float(input('Введите третье число: '))
+
+print('Максимальное число:', maximum(number_3, maximum(number_1, number_2)))
+
+
+
+
+print('Задача 3. Число наоборот 2')
+
+
+def quantity(a):
+  count = 0
+  while a > 0:
+    a //= 10
+    count += 1
+  return count 
+
+
+def transformation(a):
+  count = 0
+  number = 0
+  s = quantity(a)
+  while a > 0:
+    figure = a % 10 
+    a //= 10
+    count += 1
+    number += figure * 10 ** (s - 1)
+    s -= 1
+  return number
+  
+
+number_1 = int(input('Введите первое число: '))
+number_2 = int(input('Введите второе число: '))
+
+print('Первое число наоборот: ', transformation(number_1))
+print('Второе число наоборот: ', transformation(number_2))
+summ = transformation(number_1) + transformation(number_2)
+print('Сумма: ', summ)
+print('Сумма наоборот:', transformation(summ) )
+
+
+
+
+print('Задача 4. Урок информатики 3')
+
+number = input('Введите экспонициальную форму числа: ')
+mantissa = ''
+sequence = ''
+flag = True
+
+for symbol in number:
+  if symbol == 'e':
+    flag = False
+  elif flag:
+    if symbol != '.':
+      mantissa += symbol
+  else:
+    sequence += symbol
+print('Мантисса:', mantissa)
+print('Порядок числа:', sequence)
+
+
+
+
+print('Задача 5. Недоделка 2')
+
+
+def counter(n):
+  first_num_count = 0
+  temp = n
+  while temp > 0:
+    first_num_count += 1
+    temp = temp // 10  
+  return first_num_count
+
+
+def on_the_contrary(first_n):
+  first_num_count = 0
+  last_digit = first_n % 10
+  first_digit = first_n // 10 ** (counter(first_n) - 1)
+  between_digits = first_n % 10 ** (counter(first_n) - 1) // 10
+  first_n = last_digit * 10 ** (counter(first_n) - 1) + between_digits * 10 + first_digit
+  return first_n
+
+
+first_n = int(input("Введите первое число: "))
+ 
+if counter(first_n) < 3:
+  print("В первом числе меньше трёх цифр.")
+  first_n = int(input("Введите первое число: "))
+  print('Изменённое первое число:', on_the_contrary(first_n))
+else:
+  print('Изменённое первое число:', on_the_contrary(first_n))
+
+second_n = int(input("\nВведите второе число: "))
+
+if counter(second_n) < 4:
+  print("Во втором числе меньше четырёх цифр.")
+  second_n = int(input("\nВведите второе число: "))
+  print('Изменённое второе число:', on_the_contrary(second_n))
+else:
+  print('Изменённое второе число:', on_the_contrary(second_n))
+
+print('\nСумма чисел:', on_the_contrary(first_n) + on_the_contrary(second_n))
+
+
+
+
+print('Задача 6. Маятник')
+
+initial_amplitude = float(input("Введите начальную амплитуду: "))
+stopping_amplitude = float(input("Введите амплитуду остановки: "))
+count = 0
+
+while True:
+  if stopping_amplitude > initial_amplitude:
+    print('Амплитуда остановки больше начальной амплитуды! Введите корректные значения!')
+    initial_amplitude = float(input('\nВведите начальную амплитуду: '))
+    stopping_amplitude = float(input('Введите амплитутду остановки: '))
+  else:
+    break
+while initial_amplitude > stopping_amplitude:
+  initial_amplitude -= initial_amplitude / 100 * 8.4
+  count += 1
+print('Маятник считается остановившимся через', count, 'колебаний')
+
+
+
+
+print('Задача 7. Яйца')
+
+
+def masonry_depth(lim1, lim2):
+  x = lim1 + (lim2-lim1)/2
+  danger_test = x ** 3 - 3 * x**2 - 12*x + 10
+  return x, danger_test
+
+
+lim1 = 0
+lim2 = 4
+danger = float(input('Введите допустимый уровень опасности: '))
+x, danger_test = masonry_depth(lim1, lim2)
+while abs(danger_test) > danger:
+  if danger_test > 0: 
+    lim1 = x
+  else: 
+    lim2 = x
+  x, danger_test = masonry_depth(lim1, lim2)
+print('Приблизительная глубина кладки', x, 'м')
+
+
+
+
+print('Задача 8. Сумма ряда')
+
+
+x = int(input('Введит значение x: '))
+precision = float(input('Введите точность precision: '))
+start = 0
+i = 0
+end = 1
+y = 1
+pow = 1
+while abs(end-start) > precision:
+  start = end
+  pow *= x * x
+  i += 1
+  y *= 2 * i * (2* i - 1)
+  if i % 2:
+    end -= 1 * pow / y
+  else: end += 1 * pow / y
+print(end)
+
+
+
+
+
+print('Задача 9. Аннуитетный платёж')
+
+
+def calculation():
+  s = float(input('Введите сумму кредита: '))
+  t = int(input('На сколько лет выдан? '))
+  t_0 = t
+  t = 3
+  i = float(input('Сколько процентов годовых?  '))/100
+  return percentages(s,t,i,t_0)
+
+
+def percentages(s,t,i,t_0):
+  for n in range(1, t + 1):
+    k = i*(1 + i) ** t_0/((1 + i) ** t_0 - 1)
+    a = round(s * k, 2)
+    t_0 -= 1
+    perc = s * i
+    body = a - perc
+    print('\n- Период:', n,)
+    print('Остаток долга на начало периода:', s)
+    print('Выплачено процентов: ', perc)
+    print('Выплачено тела кредита: ', body)
+    s += perc - a
+  print('Остаток долга:', s)
+  if t == 3:
+    return extension(s, t_0)
+
+
+def extension(s,t_0):
+  print('-' * 12)
+  t = int(input('\nНа сколько лет продлевается договор? '))
+  i = float(input('Увеличение ставки до: '))/100
+  t_0 += t
+  return percentages(s,t_0,i,t_0)
+
+
+calculation()
