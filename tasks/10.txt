@@ -1,5 +1,5 @@
 
-print('Задача 1. Тестовое задание')
+print('Г‡Г Г¤Г Г·Г  1. Г’ГҐГ±ГІГ®ГўГ®ГҐ Г§Г Г¤Г Г­ГЁГҐ')
 
 for row in range(6):
   for col in range(0, 11, 2):
@@ -8,8 +8,8 @@ for row in range(6):
 
 
 
-print('Задача 2. Лестница')
-number = int(input('Введите число: '))
+print('Г‡Г Г¤Г Г·Г  2. Г‹ГҐГ±ГІГ­ГЁГ¶Г ')
+number = int(input('Г‚ГўГҐГ¤ГЁГІГҐ Г·ГЁГ±Г«Г®: '))
 
 for row in range(0, number + 1):
   for col in range(0, number + 1):
@@ -17,13 +17,13 @@ for row in range(0, number + 1):
       print('', end = '')
     else:
       print( row , end = '\t')
-  print('')
+  print('*')
 
 
 
-print('Задача 3. Рамка')
-height = int(input('Введите высоту рамки: '))
-width = int(input('Введите длину рамки: '))
+print('Г‡Г Г¤Г Г·Г  3. ГђГ Г¬ГЄГ ')
+height = int(input('Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г±Г®ГІГі Г°Г Г¬ГЄГЁ: '))
+width = int(input('Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г«ГЁГ­Гі Г°Г Г¬ГЄГЁ: '))
 
 for row in range(height):
   for col in range(width):
@@ -37,8 +37,8 @@ for row in range(height):
 
 
 
-print('Задача 4. Крест')
-size = int(input('Введите размер квадрата: '))
+print('Г‡Г Г¤Г Г·Г  4. ГЉГ°ГҐГ±ГІ')
+size = int(input('Г‚ГўГҐГ¤ГЁГІГҐ Г°Г Г§Г¬ГҐГ° ГЄГўГ Г¤Г°Г ГІГ : '))
 
 for row in range(size):
   for col in range(size):
@@ -52,8 +52,8 @@ for row in range(size):
 
 
 
-print('Задача 5. Простые числа')
-number = int(input('До какого числа считаем простые числа?: '))
+print('Г‡Г Г¤Г Г·Г  5. ГЏГ°Г®Г±ГІГ»ГҐ Г·ГЁГ±Г«Г ')
+number = int(input('Г„Г® ГЄГ ГЄГ®ГЈГ® Г·ГЁГ±Г«Г  Г±Г·ГЁГІГ ГҐГ¬ ГЇГ°Г®Г±ГІГ»ГҐ Г·ГЁГ±Г«Г ?: '))
 summ = 0
 
 for num in range(2, number):
@@ -65,44 +65,44 @@ for num in range(2, number):
     print(num)
     summ += 1
 print()
-print('Количество простых чисел в ряде:', summ)
+print('ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЇГ°Г®Г±ГІГ»Гµ Г·ГЁГ±ГҐГ« Гў Г°ГїГ¤ГҐ:', summ)
 
 
 
-print('Задача 6. Сумма факториалов')
-number = int(input('Введите число N для поиска факториала: '))
+print('Г‡Г Г¤Г Г·Г  6. Г‘ГіГ¬Г¬Г  ГґГ ГЄГІГ®Г°ГЁГ Г«Г®Гў')
+number = int(input('Г‚ГўГҐГ¤ГЁГІГҐ Г·ГЁГ±Г«Г® N Г¤Г«Гї ГЇГ®ГЁГ±ГЄГ  ГґГ ГЄГІГ®Г°ГЁГ Г«Г : '))
 summ = 0
 factorial = 1
 
 for i in range(1, number + 1):
   factorial *= i
   summ += factorial
-print('Сумма факториалов для числа', number, 'равна:' , summ)
+print('Г‘ГіГ¬Г¬Г  ГґГ ГЄГІГ®Г°ГЁГ Г«Г®Гў Г¤Г«Гї Г·ГЁГ±Г«Г ', number, 'Г°Г ГўГ­Г :' , summ)
 
 
 
-print('Задача 7. Наибольшая сумма цифр')
-quantity = int(input('Сколько чисел введем? '))
+print('Г‡Г Г¤Г Г·Г  7. ГЌГ ГЁГЎГ®Г«ГјГёГ Гї Г±ГіГ¬Г¬Г  Г¶ГЁГґГ°')
+quantity = int(input('Г‘ГЄГ®Г«ГјГЄГ® Г·ГЁГ±ГҐГ« ГўГўГҐГ¤ГҐГ¬? '))
 max_number = 0
 
 for summ in range(quantity):
-  number = int(input('Введите натуральное число: '))
+  number = int(input('Г‚ГўГҐГ¤ГЁГІГҐ Г­Г ГІГіГ°Г Г«ГјГ­Г®ГҐ Г·ГЁГ±Г«Г®: '))
   const = number
   summ = 0
   while const > 0:
     part_number = const % 10
     const = const // 10
     summ += part_number
-  print('Сумма числа =', summ)
+  print('Г‘ГіГ¬Г¬Г  Г·ГЁГ±Г«Г  =', summ)
   if summ > max_number:
     max_number = summ
     hight_number = number
-print('Наибольшее число =', hight_number, 'его сумма =', max_number)
+print('ГЌГ ГЁГЎГ®Г«ГјГёГҐГҐ Г·ГЁГ±Г«Г® =', hight_number, 'ГҐГЈГ® Г±ГіГ¬Г¬Г  =', max_number)
 
 
 
-print('Задача 8. Пирамидка')
-size = int(input('Введите высоту пирамиды: '))
+print('Г‡Г Г¤Г Г·Г  8. ГЏГЁГ°Г Г¬ГЁГ¤ГЄГ ')
+size = int(input('Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г±Г®ГІГі ГЇГЁГ°Г Г¬ГЁГ¤Г»: '))
 
 for i in range(size):
   print(' '* (size - i - 1) + '#' * (i * 2 + 1))
@@ -110,8 +110,8 @@ print()
 
 
 
-print('Задача 9. Пирамидка 2')
-size = int(input('Введите кол-во уровней пирамиды: '))
+print('Г‡Г Г¤Г Г·Г  9. ГЏГЁГ°Г Г¬ГЁГ¤ГЄГ  2')
+size = int(input('Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«-ГўГ® ГіГ°Г®ГўГ­ГҐГ© ГЇГЁГ°Г Г¬ГЁГ¤Г»: '))
 number = 1
 
 for i in range(size):
@@ -123,8 +123,8 @@ for i in range(size):
 
 
 
-print('Задача 10. Яма ')
-height = int(input('Введите высоту рисунка: '))
+print('Г‡Г Г¤Г Г·Г  10. ГџГ¬Г  ')
+height = int(input('Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г±Г®ГІГі Г°ГЁГ±ГіГ­ГЄГ : '))
 print(height)
 
 for row in range(1, height + 1):
